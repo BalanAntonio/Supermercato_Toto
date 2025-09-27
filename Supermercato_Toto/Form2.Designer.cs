@@ -35,7 +35,7 @@
             // 
             // label2
             // 
-            this.label2.Location = new System.Drawing.Point(137, 9);
+            this.label2.Location = new System.Drawing.Point(12, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(234, 40);
             this.label2.TabIndex = 1;
@@ -45,7 +45,7 @@
             // listView1
             // 
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(137, 52);
+            this.listView1.Location = new System.Drawing.Point(12, 51);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(234, 283);
             this.listView1.TabIndex = 2;
@@ -53,12 +53,13 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 52);
+            this.button1.Location = new System.Drawing.Point(252, 51);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 52);
+            this.button1.Size = new System.Drawing.Size(90, 52);
             this.button1.TabIndex = 3;
-            this.button1.Text = "button1";
+            this.button1.Text = "Aggiungi prodotto";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form2
             // 
