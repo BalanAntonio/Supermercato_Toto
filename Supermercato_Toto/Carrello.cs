@@ -46,6 +46,12 @@ namespace Supermercato_Toto
 
         private void button2_Click(object sender, EventArgs e)//stampa del scontrino
         {
+            if (Prodotti.Count == 0)
+            {
+                MessageBox.Show("Nessun prodotto inserito nel carrello");
+                return;
+            }
+
             string finale = "------------Scontrino------------\n\n";
             float totale = 0f;
             for(int i = 0; i< Prodotti.Count; i++)
