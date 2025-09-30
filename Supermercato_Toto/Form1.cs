@@ -32,5 +32,11 @@ namespace Supermercato_Toto
         {
             AggiornaData();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Carrello c = new Carrello();
+            c.ShowDialog();
+        }
     }
 }

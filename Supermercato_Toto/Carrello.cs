@@ -16,5 +16,18 @@ namespace Supermercato_Toto
         {
             InitializeComponent();
         }
+
+        List<Prodotto> Prodotti = new List<Prodotto>();
+
+        private void Carrello_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AggiungiProdotto ap = new AggiungiProdotto();
+            ap.ShowDialog();
+        }
     }
 }
