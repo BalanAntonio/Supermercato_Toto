@@ -59,7 +59,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(14, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(776, 24);
+            this.label2.Size = new System.Drawing.Size(445, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Catalogo";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -81,14 +81,14 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(81, 54);
             this.button2.TabIndex = 4;
-            this.button2.Text = "Aggiungi al carrello";
+            this.button2.Text = "Visualizza carrello";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(471, 450);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);

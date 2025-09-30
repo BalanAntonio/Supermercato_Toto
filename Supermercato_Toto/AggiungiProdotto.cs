@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Supermercato_Toto
 {
-    public partial class Form2 : Form
+    public partial class AggiungiProdotto : Form
     {
-        public Form2()
+        public AggiungiProdotto()
         {
             InitializeComponent();
         }
