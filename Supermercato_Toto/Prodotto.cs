@@ -13,7 +13,7 @@ namespace Supermercato_Toto
         public enum Nomi { Pane, Latte, Uova, Burro, Formaggio, Yogurt, Pasta, Riso, Farina, Zucchero, Sale, Aceto, Pomodori, Insalata, Carote, Patate, Cipolle, Mele, Banane, Arance, Limoni, Pollo, Manzo, Pesce, Prosciutto, Salame, Fagioli, Ceci, Lenticchie, Caffe, Te, Cioccolato, Biscotti, Marmellata, Miele, Acqua, Vino, Birra, Ketchup, Maionese, Senape, Spezie, Gelato, Detergente, Shampoo, Detersivo, Sapone, Tovaglioli }
         public Nomi Nome { get; private set; }
         public float Prezzo { get; private set; }
-        public int Quantita { get; private set; }
+        public int Quantita { get; set; }
 
         public Prodotto(int nome, float prezzo, int quantita)
         {

@@ -19,7 +19,8 @@ namespace Supermercato_Toto
             InitializeComponent();
         }
 
-        List<Prodotto> p;
+        internal List<Prodotto> p { get; set; }
+        internal Prodotto Aggiunto { get; private set; }
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -34,14 +35,17 @@ namespace Supermercato_Toto
 
             for(int i = 0; i < p.Count; i++)
             {
-                cmb_prodotto.Items.Add(p[i].Nome.ToString());
+                if (p[i].Quantita > 0) { //aggiungi i prodotti disponibili alla combobox
+                    cmb_prodotto.Items.Add(p[i].Nome.ToString());
+                }
+                
             }
-            cmb_prodotto.SelectedIndex = 0;
-            cmb_prodotto.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmb_prodotto.SelectedIndex = 0; //seleziona di default il primo elemento
+            cmb_prodotto.DropDownStyle = ComboBoxStyle.DropDownList; //disabilita la funzionalita di scrivere dentro la combobox
         }
 
         private void cmb_prodotto_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {// quando l'utente cambia prodotto nella combobox viene cambiato il valore massimo che si puo inserire nel numeric 
             for(int i = 0; i < p.Count; i++)
             {
                 if (p[i].Nome.ToString() == cmb_prodotto.SelectedItem.ToString())
@@ -49,6 +53,29 @@ namespace Supermercato_Toto
                     nmr_quantita.Maximum = p[i].Quantita;
                 }
             }
+        }
+
+        private int IdProdotto(string nome)
+        {
+            for (int i = 0; i < p.Count; i++)
+            {
+                if (p[i].Nome.ToString() == nome) { return i; }
+            }
+            return -1;
+        }
+
+        private void AggiornaJSON()
+        {
+            string convertito = JsonConvert.SerializeObject(p, Formatting.Indented);
+            File.WriteAllText("Catalogo.json", convertito);
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show(cmb_prodotto.SelectedItem.ToString());
+            Aggiunto = new Prodotto(IdProdotto(cmb_prodotto.SelectedText), p[IdProdotto(cmb_prodotto.SelectedItem.ToString())].Prezzo * (float)nmr_quantita.Value, (int)nmr_quantita.Value);
+            p[IdProdotto(cmb_prodotto.SelectedItem.ToString())].Quantita -= (int)nmr_quantita.Value;
+            AggiornaJSON();
         }
     }
 }
