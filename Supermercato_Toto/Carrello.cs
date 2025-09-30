@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Printing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,35 @@ namespace Supermercato_Toto
             Prodotti.Add(nuovo);
             //MessageBox.Show(ap.Aggiunto.Nome.ToString());
             AggiornaData();
+        }
+
+        private void button2_Click(object sender, EventArgs e)//stampa del scontrino
+        {
+            string finale = "------------Scontrino------------\n\n";
+            float totale = 0f;
+            for(int i = 0; i< Prodotti.Count; i++)
+            {
+                finale += $"{Prodotti[i].Nome.ToString()} x {Prodotti[i].Quantita}\t\tPrezzo: {Prodotti[i].Prezzo}\n";
+                totale += Prodotti[i].Prezzo;
+            }
+            finale += $"\nTotale da pagare: {totale} euro";
+
+            PrintDocument ptrDoc = new PrintDocument();
+            ptrDoc.DocumentName = $"Scontrino {DateTime.Now:T}";
+
+            ptrDoc.PrintPage += (s, ev) =>
+            {
+                ev.Graphics.DrawString(finale.ToString(), new Font("Consolas", 10),
+                    Brushes.Black, 10, 10);
+            };
+
+            PrintDialog ptrDialog = new PrintDialog();
+            ptrDialog.Document = ptrDoc;
+
+            if (ptrDialog.ShowDialog() == DialogResult.OK)
+            {
+                ptrDoc.Print();
+            }
         }
     }
 }
