@@ -49,7 +49,7 @@
             this.dtg_catalogo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtg_catalogo.Location = new System.Drawing.Point(12, 91);
             this.dtg_catalogo.Name = "dtg_catalogo";
-            this.dtg_catalogo.Size = new System.Drawing.Size(339, 347);
+            this.dtg_catalogo.Size = new System.Drawing.Size(360, 347);
             this.dtg_catalogo.TabIndex = 1;
             // 
             // label2

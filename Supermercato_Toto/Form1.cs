@@ -14,19 +14,23 @@ namespace Supermercato_Toto
 {
     public partial class Form1 : Form
     {
-
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void AggiornaData()
         {
             string testo = File.ReadAllText("Catalogo.json");
             List<Prodotto> p = new List<Prodotto>();
             p = JsonConvert.DeserializeObject<List<Prodotto>>(testo);
 
             dtg_catalogo.DataSource = p;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            AggiornaData();
         }
     }
 }
