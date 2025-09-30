@@ -31,10 +31,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmb_prodotto = new System.Windows.Forms.ComboBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.nmr_quantita = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmr_quantita)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -65,20 +65,21 @@
             this.cmb_prodotto.Name = "cmb_prodotto";
             this.cmb_prodotto.Size = new System.Drawing.Size(171, 24);
             this.cmb_prodotto.TabIndex = 4;
+            this.cmb_prodotto.SelectedIndexChanged += new System.EventHandler(this.cmb_prodotto_SelectedIndexChanged);
             // 
-            // numericUpDown1
+            // nmr_quantita
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.numericUpDown1.Location = new System.Drawing.Point(178, 136);
-            this.numericUpDown1.Minimum = new decimal(new int[] {
+            this.nmr_quantita.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.nmr_quantita.Location = new System.Drawing.Point(178, 136);
+            this.nmr_quantita.Minimum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(171, 23);
-            this.numericUpDown1.TabIndex = 5;
-            this.numericUpDown1.Value = new decimal(new int[] {
+            this.nmr_quantita.Name = "nmr_quantita";
+            this.nmr_quantita.Size = new System.Drawing.Size(171, 23);
+            this.nmr_quantita.TabIndex = 5;
+            this.nmr_quantita.Value = new decimal(new int[] {
             1,
             0,
             0,
@@ -111,14 +112,14 @@
             this.ClientSize = new System.Drawing.Size(361, 244);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.numericUpDown1);
+            this.Controls.Add(this.nmr_quantita);
             this.Controls.Add(this.cmb_prodotto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AggiungiProdotto";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmr_quantita)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -128,7 +129,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmb_prodotto;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown nmr_quantita;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
     }

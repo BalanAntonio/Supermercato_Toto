@@ -19,7 +19,7 @@ namespace Supermercato_Toto
             InitializeComponent();
         }
 
-        string[] disponibili;
+        List<Prodotto> p;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -30,7 +30,7 @@ namespace Supermercato_Toto
         {
             
             string tutto = File.ReadAllText("Catalogo.json");
-            List<Prodotto> p = JsonConvert.DeserializeObject<List<Prodotto>>(tutto);
+            p = JsonConvert.DeserializeObject<List<Prodotto>>(tutto);
 
             for(int i = 0; i < p.Count; i++)
             {
@@ -38,6 +38,17 @@ namespace Supermercato_Toto
             }
             cmb_prodotto.SelectedIndex = 0;
             cmb_prodotto.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void cmb_prodotto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            for(int i = 0; i < p.Count; i++)
+            {
+                if (p[i].Nome.ToString() == cmb_prodotto.SelectedItem.ToString())
+                {
+                    nmr_quantita.Maximum = p[i].Quantita;
+                }
+            }
         }
     }
 }
