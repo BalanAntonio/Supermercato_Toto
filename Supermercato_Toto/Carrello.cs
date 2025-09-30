@@ -36,6 +36,7 @@ namespace Supermercato_Toto
         {
             AggiungiProdotto ap = new AggiungiProdotto();
             ap.ShowDialog();
+            if (!(ap.DialogResult == DialogResult.OK)) { return; }
             Prodotto nuovo = ap.Aggiunto;
             Prodotti.Add(nuovo);
             //MessageBox.Show(ap.Aggiunto.Nome.ToString());

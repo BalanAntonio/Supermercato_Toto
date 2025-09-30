@@ -29,7 +29,6 @@ namespace Supermercato_Toto
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            
             string tutto = File.ReadAllText("Catalogo.json");
             p = JsonConvert.DeserializeObject<List<Prodotto>>(tutto);
 
@@ -72,6 +71,7 @@ namespace Supermercato_Toto
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            DialogResult = DialogResult.OK;
             Aggiunto = new Prodotto(IdProdotto(cmb_prodotto.SelectedItem.ToString()), p[IdProdotto(cmb_prodotto.SelectedItem.ToString())].Prezzo * (float)nmr_quantita.Value, (int)nmr_quantita.Value);
             p[IdProdotto(cmb_prodotto.SelectedItem.ToString())].Quantita -= (int)nmr_quantita.Value;
             AggiornaJSON();
