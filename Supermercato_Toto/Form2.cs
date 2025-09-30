@@ -21,5 +21,10 @@ namespace Supermercato_Toto
         {
 
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

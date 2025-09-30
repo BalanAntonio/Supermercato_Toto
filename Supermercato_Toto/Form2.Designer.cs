@@ -39,7 +39,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(234, 40);
             this.label2.TabIndex = 1;
-            this.label2.Text = "label2";
+            this.label2.Text = "Lista ";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // listView1
@@ -71,6 +71,7 @@
             this.Controls.Add(this.label2);
             this.Name = "Form2";
             this.Text = "Form2";
+            this.Load += new System.EventHandler(this.Form2_Load);
             this.ResumeLayout(false);
 
         }
