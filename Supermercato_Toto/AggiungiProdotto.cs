@@ -19,7 +19,7 @@ namespace Supermercato_Toto
             InitializeComponent();
         }
 
-        internal List<Prodotto> p { get; set; }
+        List<Prodotto> p;
         internal Prodotto Aggiunto { get; private set; }
 
         private void button1_Click(object sender, EventArgs e)
@@ -72,10 +72,10 @@ namespace Supermercato_Toto
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show(cmb_prodotto.SelectedItem.ToString());
-            Aggiunto = new Prodotto(IdProdotto(cmb_prodotto.SelectedText), p[IdProdotto(cmb_prodotto.SelectedItem.ToString())].Prezzo * (float)nmr_quantita.Value, (int)nmr_quantita.Value);
+            Aggiunto = new Prodotto(IdProdotto(cmb_prodotto.SelectedItem.ToString()), p[IdProdotto(cmb_prodotto.SelectedItem.ToString())].Prezzo * (float)nmr_quantita.Value, (int)nmr_quantita.Value);
             p[IdProdotto(cmb_prodotto.SelectedItem.ToString())].Quantita -= (int)nmr_quantita.Value;
             AggiornaJSON();
+            this.Close();
         }
     }
 }

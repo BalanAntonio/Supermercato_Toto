@@ -2,7 +2,7 @@
   {
     "Nome": 0,
     "Prezzo": 1.5,
-    "Quantita": 0
+    "Quantita": 1
   },
   {
     "Nome": 1,
@@ -22,7 +22,7 @@
   {
     "Nome": 4,
     "Prezzo": 3.0,
-    "Quantita": 5
+    "Quantita": 1
   },
   {
     "Nome": 5,

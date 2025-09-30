@@ -37,6 +37,14 @@ namespace Supermercato_Toto
         {
             Carrello c = new Carrello();
             c.ShowDialog();
+            AggiornaData();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Rifornisci r = new Rifornisci();
+            r.ShowDialog();
+            AggiornaData();
         }
     }
 }
